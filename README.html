@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<h1 id="shinypsychometric">shinyPsychometric</h1>
+<p>A shiny App to illustrate the variability in fitting psychometric functions and threshold estimates.</p>
+<h2 id="the-aim">The aim</h2>
+<p>Measuring the psychometric function is a classical method in <a href="http://en.wikipedia.org/wiki/Psychophysics">psychophysics</a>. The <a href="http://en.wikipedia.org/wiki/Psychometric_function">psychometric function</a> relates the strength of an external stimulus and the observer’s responses. The aim in measuring a psychometric function is often to estimate a <a href="http://en.wikipedia.org/wiki/Psychophysics#Thresholds">threshold</a>: the stimulus strength corresponding to a given level of performance.</p>
+<p>I wrote this shiny app to help my students (undergrads in Psychology) understand how experimental choices (the number of stimulus intensities at which performance is measured, their placement, the number of observations per data point, etc.) affect the variability of parameter estimates. It also serves as an introduction to the notion of curve fitting, optimization, Monte Carlo simulation and bootstrapping.</p>
+<h2 id="what-it-does">What it does</h2>
+<ol style="list-style-type: decimal">
+<li>generate a data set: The user defines a set of experimental choices, such as the number of data points, their placement, the number of observations per data point, and the threshold criterion. Then, a data set is randomly sampled from a binomial distribution, with probabilities given by a known psychometric function.</li>
+<li>Fit a psychometric curve: A psychometric function is then fit to the simulated data set, and the threshold is estimated.</li>
+<li>Monte Carlo simulation: It is possible to increase the number of generated data sets. This results in the display of the distribution</li>
+</ol>
+<h2 id="to-run-the-app">To run the app</h2>
+<ol style="list-style-type: decimal">
+<li><p>To run the app, you need <a href="http://www.r-project.org">R</a>, and some additional packages: <code>shiny</code>, <code>shinyIncubator</code>, <code>plyr</code> an <code>reshape2</code>. You can install most of them from the R console with the <code>install.packages()</code> command, e.g.:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&#39;shiny&#39;</span>, <span class="st">&#39;plyr&#39;</span>, <span class="st">&#39;reshape2&#39;</span>))</code></pre>
+<p>Things are a little bit different for <code>shinyIncubator</code>, which is still experimental and hosted at <a href="https://github.com/rstudio/shiny-incubator">github</a>. So you need the <code>devtools</code> package (install it if required with <code>install.packages('devtools')</code>), and run:</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;shiny-incubator&quot;</span>, <span class="st">&quot;rstudio&quot;</span>)</code></pre></li>
+<li><p>Once you have the required packages, you can just run the app by typing/pasting the following commands at the R prompt:</p>
+<pre class="sourceCode r"><code class="sourceCode r">shiny::<span class="kw">runGitHub</span>(<span class="st">&#39;shinyPsychometric&#39;</span>, <span class="st">&#39;MatthieuDubois&#39;</span>)</code></pre></li>
+</ol>
+</body>
+</html>
