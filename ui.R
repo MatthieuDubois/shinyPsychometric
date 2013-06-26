@@ -36,7 +36,7 @@ shinyUI(pageWithSidebar(
 		sliderInput("nBoot", 
 			"Number of generated data sets:", 
 			min = 1, 
-			max = 1000, 
+			max = 500, 
 			value = 1),
 		helpText("Note: Increasing the number of generated data sets increases the computing time. "),
 		# the function 'actionButton' is from the 'shinyIncubator' package
