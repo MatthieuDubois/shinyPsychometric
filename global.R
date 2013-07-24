@@ -11,7 +11,7 @@ lapply(libs, require, character.only = TRUE)
 # where
 # $F$ is a sigmoid function mapping the stimulus intensity $x$ to the range [0;1]. The cumulative distribution function of a distributional family (as the cummulative Gaussian) is typically used; 
 # $\alpha$ and $\beta$ are the location parameters of $F$. In the case of a cummulative Gaussian, they correpond to its mean ($\mu$) and standard deviation ($\sigma$); and
-# $\gamma$ and $\lambda$ adjust the range of $F$. $\gamma$ is the base rate of performance in the absence of signal. In the case when the participant is forced to choose between alternatives, $\alpha$ is the *guessing* rate. The psychometric function asymptotes at $1-\lambda$. $\gamma$ captures the rate at which observers *lapse*, responding incorrectly irrespective of the stimulus intensity. 
+# $\gamma$ and $\lambda$ adjust the range of $F$. $\gamma$ is the base rate of performance in the absence of signal. In the case when the participant is forced to choose between alternatives, $\gamma$ is the *guessing* rate. The psychometric function asymptotes at $1-\lambda$. $\lambda$ captures the rate at which observers *lapse*, responding incorrectly irrespective of the stimulus intensity. 
 
 # psychometric function
 # x are the stimulus intensities
