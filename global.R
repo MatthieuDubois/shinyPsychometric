@@ -80,7 +80,7 @@ likelihood <- function(p, df, opts) {
 		
 	# bayesian flat prior
 	# implements the constraints put on lambda, according to Wichmann & Hill
-	if (opts$estimateLambda && (p[3] < 0 | p[3] > 0.06)) {
+	if (opts$estimateLambda && p[3] > 0.06) {
 		-log(0)
 	} else {
 		# remove this part of the computation of the log likelihood, as it is constant:
